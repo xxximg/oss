@@ -1,0 +1,150 @@
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+        }
+        .page-nav {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #f1f1f1;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        .page-nav button {
+            margin-bottom: 10px;
+        }
+        .page-list {
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+        .page-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            margin-bottom: 5px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            cursor: pointer;
+            user-select: none; 
+        }
+        .page-item.selected {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .page-item input {
+            border: none;
+            background: none;
+            color: inherit;
+            font-size: inherit;
+            outline: none;
+            width: calc(100% - 60px);
+        }
+        .delete-button {
+            background: red;
+            border: none;
+            color: white;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        .input-container {
+            position: fixed;
+            bottom: 0;
+            width: calc(60%);
+            padding: 10px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            align-content: flex-end;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        #inputField {
+            width: 50%;
+            height: 50px;
+            padding: 10px;
+            font-size: 16px;
+            resize: none;
+        }
+        .content-container {
+            margin-top: 20px;
+            padding: 10px;
+            max-width: calc(100% - 293px);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            position: relative; 
+        }
+        .content-item {
+            display: inline-block;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            cursor: move;
+            position: relative;
+        }
+        .content-item.dragging {
+            opacity: 0.5;
+        }
+        .content-item.highlight {
+            border: 2px dashed #007bff;
+        }
+        .copied-message {
+            color: green;
+            margin-left: 10px;
+        }
+        .delete-area {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 100%;
+            background-color: #e0e0e0;
+            color: #333;
+            text-align: center;
+            line-height: 100%;
+            font-weight: bold;
+            display: none;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            border-right: 5px dashed transparent;
+        }
+        .delete-area.show {
+            display: block;
+        }
+        .delete-area.highlight {
+            border-right: 5px dashed #ff0000;
+        }
+        /* 省略的样式 */
+        .content-item a {
+            color: blue;
+            text-decoration: underline;
+        }
+        .copied-message {
+            color: green;
+            font-size: 0.8em;
+            margin-left: 5px;
+        }
+        .content-item a {
+            color: blue;
+            text-decoration: underline;
+        }
+        .copied-message {
+            color: green;
+            font-size: 0.8em;
+            margin-left: 5px;
+        }
