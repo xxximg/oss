@@ -1,0 +1,190 @@
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+        #calendar-container {
+            display: grid;
+            gap: 5px;
+            grid-template-columns: repeat(auto-fill, minmax(15px, 1fr));
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .day {
+            width: 15px;
+            height: 15px;
+            background-color: gray;
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .day.green {
+            background-color: #4ade80;
+        }
+
+        .day.disabled {
+            background-color: #e5e7eb;
+            cursor: not-allowed;
+        }
+
+        .note-popup {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 8px;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            z-index: 10;
+            font-size: 12px;
+        }
+
+        .note-popup::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 5px;
+            border-style: solid;
+            border-color: white transparent transparent transparent;
+        }
+
+        .day:hover .note-popup {
+            display: block;
+        }
+
+        #note-input-container {
+            display: none;
+            margin-top: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        #note-input {
+            border: none;
+            border-bottom: 2px solid black;
+            width: 100%;
+            padding: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .action-buttons button,
+        .action-buttons input[type="file"] {
+            font-size: 16px;
+            padding: 8px 12px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            position: relative;
+            outline: none;
+            color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .action-buttons button:hover,
+        .action-buttons input[type="file"]:hover {
+            color: black;
+        }
+
+        .action-buttons::before,
+        .action-buttons::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: gray;
+            transition: transform 0.4s;
+        }
+
+        .action-buttons::before {
+            transform: scaleX(1);
+        }
+
+        .action-buttons::after {
+            transform: scaleX(0);
+        }
+
+        .action-buttons:hover::before {
+            transform: scaleX(0);
+        }
+
+        .action-buttons:hover::after {
+            transform: scaleX(1);
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        label.upload-label {
+            background-color: transparent;
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            color: black;
+        }
+
+        label.upload-label:hover {
+            color: black;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            padding: 5px 5px 5px 5px;
+            color: #333;
+            text-align: right;
+            font-size: 12px;
+            width: 295px;
+        }
+        .footer a {
+            color: #2e1111;
+            text-decoration: none;
+        }
+            
+        #jumping-text {
+          display: inline-block;
+          font-size: 12px;
+        }
+
+        .jumping-char {
+          display: inline-block;
+          position: relative;
+          animation: jump 1s ease-in-out infinite;
+        }
+
+        @keyframes jump {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+        @media (max-width: 800px) {
+            .Other {
+                display: none;
+            }    
+            .containerip {
+                display: none;
+            }
+        }
