@@ -1,0 +1,71 @@
+        body {
+            font-family: 'Hubot Sans', 'Microsoft YaHei UI', 'Microsoft YaHei', 'Helvetica', 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            font-family: inherit;
+            text-align: center;
+            color: #333;
+        }
+        .file-upload {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+        }
+        .file-upload input[type="file"] {
+            display: none; 
+        }
+        .file-upload-label {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 2px solid #007BFF; 
+            border-radius: 8px;
+            background-color: #007BFF; 
+            color: white;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .file-upload-label:hover {
+            background-color: #0056b3; 
+        }
+        table {
+            width: 60%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+        th:first-child {
+            width: 200px; 
+        }
+        th:last-child {
+            width: auto; 
+        }
+        td {
+            padding: 6px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            color: #555;
+            word-wrap: break-word; 
+            white-space: normal; 
+            max-width: 300px; 
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        #exifTable {
+            margin-top: 20px;
+            display: none;
+        }
