@@ -1,0 +1,126 @@
+.wd {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+}
+
+#dock-bar {
+    display: flex;
+    align-items: flex-end;
+    border-radius: 8px 8px 0 0;
+    padding: 11px 5px 20px 5px;
+    backdrop-filter: blur(6px);
+    background-color: rgba(255, 255, 255, 0.3); 
+    width: auto; 
+    box-sizing: content-box; 
+    left: 20%;
+}
+
+.dock-one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 10px;
+    position: relative; 
+    transition: transform 0.3s ease;
+}
+
+.dock-one img {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.dock-one:hover img {
+    transform: translateY(-5px);
+}
+
+.dock-one span {
+    color: black;
+    font-size: 12px;
+    margin-top: 4px;
+    text-align: center;
+    white-space: nowrap;
+    display: none;
+    position: absolute;
+    bottom: -20px;
+}
+
+.dock-one:hover span {
+    display: block;
+}
+        .dock-one2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .dock-one2 button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .dock-one2 button svg {
+            idth: 25px;
+            height: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .dock-one2 button:hover svg {
+            transform: translateY(-5px);
+        }
+
+        .dock-one2 button span {
+            display: none;
+            color: black;
+            font-size: 12px;
+            margin-top: 4px;
+            text-align: center;
+            white-space: nowrap;
+            position: absolute;
+            bottom: -20px;
+        }
+
+        .dock-one2 button:hover span {
+            display: block;
+        }
+
+        .player {
+            display: flex;
+            align-items: center;
+            margin: -6px 4px;
+            background-color: #f0f0f0;
+            border: 2px solid #333;
+            border-radius: 20px;
+            padding: 0px 9px 0px 8px;
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+        }
+
+        .song-name {
+            font-size: 14px;
+            color: black;
+
+        }
+
+
+@media (max-width: 959px) {
+    #dock-bar {
+        display: none;
+}
