@@ -1,0 +1,192 @@
+        .wd {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            bottom: 0;
+        }
+
+        #dock-bar {
+            display: flex;
+            align-items: flex-end;
+            border-radius: 8px 8px 0 0;
+            padding: 45px 5px 20px 5px;
+            backdrop-filter: blur(6px);
+            background-color: rgba(255, 255, 255, 0.3);
+            width: auto;
+            box-sizing: content-box;
+            left: 20%;
+            margin-top: 15px;
+        }
+
+        .dock-one {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            margin: 0 10px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .dock-one img {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .dock-one:hover img {
+            transform: translateY(-5px);
+        }
+
+        .dock-one span {
+            color: black;
+            font-size: 12px;
+            margin-top: 4px;
+            text-align: center;
+            white-space: nowrap;
+            display: none;
+            position: absolute;
+            bottom: -20px;
+        }
+
+        .dock-one:hover span {
+            display: block;
+        }
+
+        .dock-one2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .dock-one2 button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .dock-one2 button svg {
+            width: 25px;
+            height: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .dock-one2 button:hover svg {
+            transform: translateY(-5px);
+        }
+
+        .dock-one2 button span {
+            display: none;
+            color: black;
+            font-size: 12px;
+            margin-top: 4px;
+            text-align: center;
+            white-space: nowrap;
+            position: absolute;
+            bottom: -20px;
+        }
+
+        .dock-one2 button:hover span {
+            display: block;
+        }
+
+        .player {
+            display: flex;
+            align-items: center;
+            margin: -6px 4px;
+            background-color: #f0f0f0;
+            border: 2px solid #333;
+            border-radius: 20px;
+            padding: 0px 9px 0px 8px;
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+        }
+
+        .song-name {
+            font-size: 14px;
+            color: black;
+        }
+
+        /* 搜索栏样式 */
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+            margin-bottom: -51px; 
+            position: fixed;
+            bottom: 100px; 
+            left: 20.9%; 
+            z-index: 9999;
+        }
+
+        .search-bar input {
+            padding: 5px;
+            margin-right: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .search-bar button {
+            padding: 5px 10px;
+            border-radius: 4px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        /* 下拉菜单 */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 112px;
+            bottom: 37px;
+            box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 6px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* 鼠标悬停时显示下拉菜单 */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        @media (max-width: 959px) {
+            .search-bar {
+                display: none;
+            }
+            #dock-bar {
+                display: none;
+            }
+        }
