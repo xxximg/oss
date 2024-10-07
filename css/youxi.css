@@ -1,0 +1,191 @@
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #4A90E2;
+        }
+        #story {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        #choices {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .choice {
+            background-color: #4A90E2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .choice:hover {
+            background-color: #357ABD;
+        }
+        #nextButton, #submitButton, #loadButton {
+            background-color: #5CBE5C;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: none; /* 初始隐藏 */
+        }
+        #nextButton:hover, #submitButton:hover, #loadButton:hover {
+            background-color: #4CAF50;
+        }
+        .button-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .button-container2 {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .button-container input {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #007BFF;
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+         .button-container2 input {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #007BFF;
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .button-container2 button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .min {
+		max-height:25px;
+        }
+        
+        .showImg{cursor: zoom-in;}
+        #bigImg{cursor: zoom-out;}
+        
+        .img-container {
+            display: inline-block; /* 或者使用 flex */
+            margin: 5px; /* 添加间距 */
+        }
+        
+    </style>
+</head>
+<body>
+<h1>文本冒险游戏</h1>
+<div id="story"></div>
+<div id="choices"></div>
+<button id="nextButton" onclick="showNextLine()">下一步</button>
+<div class="button-container">
+    <button onclick="selectFile()">选择TXT文件</button>
+</div>
+<div class="button-container2">
+    <input type="text" id="urlInput" placeholder="输入故事文本文件的URL" />
+    <button id="submitButton" onclick="loadStoryFromURL()">提交</button>
+    <button onclick="loadStoryFromURL()">加载</button> <!-- 添加加载按钮 -->
+</div>
+
+<input type="file" id="fileInput" style="display:none;" />
+
+<!-- 遮罩区域（先将div隐藏）-->
+<div id="back-curtain" style="position:fixed;top:0;left:0;background:rgba(0,0,0,0.5);z-index:998;width:100%;display:none;">
+	<!--放大后的图片-->
+	<div id="imgDiv" style="position:absolute;">
+		<img id="bigImg" src="" />
+	</div>
+</div>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+// 图片点击放大
+$('.showImg').on('click', function(){
+	imgShow("#imgDiv", "#bigImg", $(this), "#back-curtain");
+});
+
+function imgShow(imgDiv, bigImg, _this, curtain) {
+	// 图片路径
+	var src = _this.attr("src");
+	$(bigImg).attr("src", src);
+	// 加载图片,获取当前点击图片的真实大小
+	$("<img/>").attr("src", src).load(function(){
+		var windowWidth = $(window).width();
+		var windowHeight = $(window).height();
+		var realWidth = this.width;
+		var realHeight = this.height;
+		var imgWidth, imgHeight;
+		var scale = 0.8;
+		if (realHeight > windowHeight * scale) {
+			imgHeight = windowHeight * scale;
+			imgWidth = imgHeight / realHeight * realWidth;
+			if (imgWidth > windowWidth * scale) {
+				imgWidth = windowWidth * scale;
+			}
+		} else if (realWidth > windowWidth * scale) {
+			imgWidth = windowWidth * scale;
+			imgHeight = imgWidth / realWidth * realHeight;
+		} else {
+			imgWidth = realWidth;
+			imgHeight = realHeight;
+		}
+		$(bigImg).css({'width':imgWidth});
+		//计算图片与窗口左边距
+		var left = (windowWidth - imgWidth) / 2;
+		//计算图片与窗口上边距 
+		var top = (windowHeight - imgHeight) / 2;
+		// 图片位置
+		$(imgDiv).css({'top':top, 'left':left});
+		// 图片淡入
+		$(curtain).fadeIn("fast");
+		// 遮罩效果
+		$(curtain).css({
+	        'position':'fixed',
+	        'overflow-y':'auto',
+	        'width':'100%',
+	        'height':'100%',
+	  		'z-index':'998'
+        }).show();
+	});
+	// 点击图片或遮罩，图片淡出
+	$(curtain).on('click', function(){
+		$(this).fadeOut("fast");
+	});
