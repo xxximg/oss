@@ -1,0 +1,75 @@
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #e8e4d4;
+            color: #333;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        .button-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .button-container input {
+            width: 69%;
+            padding: 11px;
+            font-size: 16px;
+            border: 2px solid #cbc09f;
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #525151;
+            background-color: #e8e4d4;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            border: 1px solid #acaba3;
+        }
+        .button-container button:hover {
+            border: 1px solid #525151;
+        }
+
+        /* 侧边栏样式 */
+        #videoList {
+            position: fixed;
+            width: 245px;
+            height: auto;
+            background-color: #f7f4e8;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            overflow-y: auto;
+            transition: left 0.3s ease;
+            list-style: none;
+            text-align: left;
+            left: -250px; /* 默认隐藏 */
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            max-height: 80vh;
+        }
+
+        #videoList li {
+            padding: 5px 0;
+            cursor: pointer;
+            color: #525151;
+        }
+
+        #videoList li:hover {
+            text-decoration: underline;
+            color: #333;
+        }
+
+        #videoFrame {
+            display: none; 
+            width: 100%;
+            height: calc(100vh - 200px); 
+        }
+        #videoList {
+            display: none; 
+        }
