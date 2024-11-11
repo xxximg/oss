@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column; /* 纵向排列 */
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #454545;
+  font-size: 10px;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden; /* 防止body溢出 */
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  height: 60vh; /* 固定容器的高度为60%视口高度 */
+  overflow-y: auto; /* 在容器内出现滚动条 */
+  padding-right: 20px; /* 为了防止滚动条遮挡内容 */
+  margin-bottom: 20px; /* 保证按钮不与容器重叠 */
+  position: relative;
+}
+
+p {
+  white-space: normal; /* 自动换行 */
+  overflow: hidden;
+  margin-bottom: 10px;
+  font-size: 2em;
+  text-indent: 2em; /* 保持首行缩进 */
+}
+
+.cursor {
+  display: inline;
+  animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.controls {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  position: absolute; /* 使用绝对定位 */
+  bottom: 20px; /* 固定在页面底部 */
+  left: 50%;
+  transform: translateX(-50%); /* 居中对齐 */
+}
+
+input[type="text"] {
+  padding: 11px;
+  font-size: 16px;
+  border: 2px solid #cbc09f;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #525151;
+  background-color: #e8e4d4;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+  border: 1px solid #acaba3;
+}
+
+button:disabled {
+  border: 1px solid #525151;
+}
+
+/* 让容器滑块始终显示 */
+.container::-webkit-scrollbar {
+  width: 12px;
+  opacity: 1;
+}
+
+/* 自定义滚动条轨道 
+.container::-webkit-scrollbar-track {
+  background: #333;
+  border-radius: 10px;
+}
+*/
+/* 自定义滚动条滑块 
+.container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+  border: 3px solid #333;
+}
+*/
