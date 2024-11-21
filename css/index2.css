@@ -1,0 +1,243 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; 
+    overflow-y: auto;
+    background-color: #f8f8f8;
+    background-attachment: fixed;
+}
+
+body::-webkit-scrollbar {
+    display: none; 
+}
+
+.header, .container, .footer {
+    max-width: 1300px;
+}
+
+.header {
+    text-align: left;
+    width: 100%;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin: 20px 0px 0px 20px;
+}
+.header p {
+    font-size: 1.2em;
+    color: #666;
+    margin: 20px;
+    margin: 0px 0px 0px 20px;
+    font-size: 15px;
+}
+.container {
+    width: 100%;
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box; 
+}
+.project {
+    background-color: rgba(249, 250, 251);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    text-decoration: none; 
+    color: inherit; 
+    position: relative; 
+}
+
+.project:hover {
+    background-color: rgb(229, 231, 235); 
+}
+
+.project img {
+    width: 40px; 
+    height: auto;
+    margin-right: 15px; 
+    border-radius: 20%;
+}
+.project h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+.project p {
+    margin: 0;
+    color: #777;
+    font-size: 12px;
+}
+
+.icon-container {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.wenzhang-btn {
+    background: url('data:image/svg+xml;utf8,%3Csvg viewBox=\'0 0 24 24\' width=\'1em\' height=\'1em\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath fill=\'currentColor\' d=\'m16.004 9.414l-8.607 8.607l-1.414-1.414L14.589 8H7.004V6h11v11h-2V9.414z\'/%3E%3C/svg%3E') no-repeat center center;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.GitHub-btn {
+    background: url('https://pic2.ziyuan.wang/user/miss/2024/11/GitHub_13edb5c172b72.png') no-repeat center center;
+    background-size: contain;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.OneDrive-icon {
+    background: url('https://pic2.ziyuan.wang/user/miss/2024/10/onedrive_e060fb4d64aea.png') no-repeat center center;
+    background-size: contain;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.project .wenzhang-btn:hover {
+    filter: brightness(0) saturate(100%) invert(15%) sepia(89%) saturate(694%) hue-rotate(162deg) brightness(97%) contrast(97%);
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #999;
+    margin-top: auto;
+    text-align: right;
+    width: 100%;
+}
+
+.footer a {
+    text-decoration: none;
+    color: rgba(217, 115, 13, 1);
+    font-weight: bolder;
+}
+
+:focus {
+    outline: 0;
+    border-color: #2260ff;
+    box-shadow: 0 0 0 4px #b5c9fc;
+}
+
+.mydict div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+    justify-content: center;
+}
+
+.mydict input[type="radio"] {
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.mydict input[type="radio"]:checked + span {
+    box-shadow: 0 0 0 0.0625em #0043ed;
+    background-color: #dee7ff;
+    z-index: 1;
+    color: #0043ed;
+}
+
+label span {
+    display: block;
+    cursor: pointer;
+    background-color: #fff;
+    padding: 0.375em .75em;
+    position: relative;
+    margin-left: .0625em;
+    box-shadow: 0 0 0 0.0625em #b5bfd9;
+    letter-spacing: .05em;
+    color: #3e4963;
+    text-align: center;
+    transition: background-color .5s ease;
+}
+
+label:first-child span {
+    border-radius: .375em 0 0 .375em;
+}
+
+label:last-child span {
+    border-radius: 0 .375em .375em 0;
+}
+#project-container a:focus,
+#project-container .wenzhang-btn:focus,
+#project-container button:focus,
+#project-container input:focus,
+#project-container textarea:focus {
+    outline: none;
+    box-shadow: none; 
+}
+
+a:focus-visible, .wenzhang-btn:focus-visible {
+    outline: 2px solid #0043ed;
+    box-shadow: 0 0 0 2px rgba(0, 67, 237, 0.2);
+}
+
+.logo {
+    width: 60px !important;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent !important;
+}
+
+.logo img {
+    width: 60px;
+    box-shadow: #0000003d 0 3px 8px;
+    background-color: transparent !important;
+}
+
+@media (min-width: 640px) {
+    .container {
+    grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+
+@media (min-width: 1000px) {
+    .container {
+    grid-template-columns: repeat(4, 1fr);
+    }
+  
+}
+
+@media (max-width: 1330px) {
+    .footer {
+    padding: 0px 20px 0px 0px;
+    box-sizing: border-box;
+    }
+}
+
+@media (max-width: 400px) {
+    label span {
+        padding: 0.355em 0.4em;
+    }
+}
+
+@media (max-width: 1500px) {
+    .logo {
+        display: none;
+    }
+}
