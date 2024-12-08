@@ -327,6 +327,10 @@ nav {
     transition: all .3s ease-out;
     vertical-align: middle;
     font-family: Roboto,Tahoma,Consolas,Microsoft YaHei
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
 }
 
 nav a.clip {
