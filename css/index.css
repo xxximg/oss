@@ -376,3 +376,8 @@ code {
 li {
     word-wrap: break-word;
 }
+@media screen and (max-width: 500px) {
+    .search-bar img {
+        display: none; 
+    }
+}
