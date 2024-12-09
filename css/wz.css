@@ -228,3 +228,14 @@ nav a.active,nav a:hover {
         left: 0px;
     }
 }
+code {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-all;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+li {
+    word-wrap: break-word;
+}
