@@ -190,7 +190,7 @@ body::-webkit-scrollbar {
     filter: brightness(0) saturate(100%) invert(15%) sepia(89%) saturate(694%) hue-rotate(162deg) brightness(97%) contrast(97%);
 }
 
-.footer {
+.container .footer {
     text-align: center;
     margin-top: 40px;
     font-size: 0.9em;
@@ -200,13 +200,13 @@ body::-webkit-scrollbar {
     width: 100%;
 }
 
-.footer a {
+.container .footer a {
     text-decoration: none;
     color: rgba(217, 115, 13, 1);
     font-weight: bolder;
 }
 
-:focus {
+.container :focus {
     outline: 0;
     border-color: #2260ff;
     box-shadow: 0 0 0 4px #b5c9fc;
