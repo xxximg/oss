@@ -1,0 +1,364 @@
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f8f8f8;
+      --border: #e2e2e3;
+      --text: #2c3e50;
+      --text-light: #476582;
+      --text-lighter: #8a8f98;
+      --link: #3eaf7c;
+      --link-hover: #4abf8a;
+      --link-active: #30a572;
+      --header-border: #e2e2e3;
+      --code-bg: #f2f2f2;
+      --code-border: #e5e5e6;
+      --code-text: #476582;
+      --table-bg-odd: #f9f9f9;
+      --table-bg-even: #ffffff;
+      --table-border: #eaeaea;
+      --max-content-width: 800px;
+      --sidebar-width: 240px;
+      --outline-width: 200px;
+      --header-height: 55px;
+      --content-padding: 35px;
+      --scrollbar-width: 6px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      line-height: 1.6;
+      /* 全局滚动条样式 */
+      scrollbar-width: thin;
+    }
+
+    /* 自定义滚动条 */
+    ::-webkit-scrollbar {
+      width: var(--scrollbar-width);
+      height: var(--scrollbar-width);
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #d9d9d9;
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #c1c1c1;
+    }
+
+    /* 主容器布局 */
+    .main-container {
+      display: flex;
+      width: 100%;
+      max-width: calc(var(--sidebar-width) + var(--max-content-width) + var(--outline-width) + (2 * var(--content-padding)));
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* 侧边栏样式 */
+    #sidebar {
+      width: var(--sidebar-width);
+      background: var(--bg);
+      padding: 20px 0 20px;
+      overflow-y: auto;
+      border-right: 1px solid var(--border);
+      box-sizing: border-box;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      flex-shrink: 0;
+    }
+
+    .sidebar-group {
+      margin: 0;
+      padding: 0;
+    }
+
+    .sidebar-group:not(:first-child) {
+      margin-top: 16px;
+    }
+
+    .sidebar-group + .sidebar-group {
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+
+    .sidebar-heading {
+      color: var(--text-light);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 0 24px 8px;
+      margin: 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      user-select: none;
+    }
+
+    .sidebar-heading .arrow {
+      margin-right: 6px;
+      transform: rotate(90deg);
+      transition: transform 0.2s ease;
+      opacity: 0.6;
+      width: 16px;
+      height: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sidebar-heading.collapsed .arrow {
+      transform: rotate(0);
+    }
+
+    .sidebar-links {
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      transition: height 0.2s ease;
+    }
+
+    .sidebar-links.collapsed {
+      height: 0 !important;
+    }
+
+    .sidebar-link {
+      display: block;
+      color: var(--text);
+      font-size: 14px;
+      padding: 6px 24px 6px 32px;
+      margin: 0;
+      line-height: 1.5;
+      position: relative;
+      border-left: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      text-decoration: none;
+    }
+
+    .sidebar-link:hover {
+      color: var(--link);
+    }
+
+    .sidebar-link.active {
+      color: var(--link);
+      border-left-color: var(--link);
+      background-color: rgba(62, 175, 124, 0.1);
+      font-weight: 500;
+    }
+
+    /* 内容区域 */
+    #content-container {
+      flex: 1;
+      display: flex;
+      min-width: 0;
+      position: relative;
+      font-size: 14px;
+    }
+
+    #content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 32px var(--content-padding);
+      max-width: var(--max-content-width);
+      margin: 0 auto;
+      scroll-behavior: smooth;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    #content > :first-child {
+      margin-top: 0;
+    }
+
+    /* 代码块样式 */
+    pre {
+      background-color: var(--code-bg);
+      border-radius: 6px;
+      padding: 16px;
+      overflow-x: auto;
+      margin: 1em 0;
+      border: 1px solid var(--code-border);
+    }
+
+    code {
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+      font-size: 0.9em;
+      color: var(--code-text);
+      background-color: var(--code-bg);
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+      border: 1px solid var(--code-border);
+    }
+
+    pre code {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      color: inherit;
+    }
+
+    blockquote {
+      background-color: #f6fdeb;
+      border-radius: 6px;
+      padding: 5px 15px 5px 15px;
+      overflow-x: auto;
+      margin: 1em 0;
+      border: 1px solid var(--code-border);
+    }
+
+    p{
+      margin: 5px 0;
+    }
+  
+    /* 图片样式 - 添加悬停效果 */
+    img {
+      max-width: 100%;
+      border-radius: 4px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: zoom-in;
+    }
+  
+    img:hover {
+      transform: scale(1.01);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 表格样式 - 灰白相间 */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1em 0;
+      font-size: 0.9em;
+    }
+
+    th, td {
+      padding: 12px 16px;
+      border: 1px solid var(--table-border);
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--bg-soft);
+      font-weight: 600;
+    }
+
+    tr:nth-child(odd) {
+      background-color: var(--table-bg-odd);
+    }
+
+    tr:nth-child(even) {
+      background-color: var(--table-bg-even);
+    }
+
+    /* 目录样式 - VitePress 风格 */
+    #outline {
+      width: var(--outline-width);
+      background: var(--bg);
+      padding: 16px 0;
+      overflow-y: auto;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      box-sizing: border-box;
+      font-size: 13px;
+      flex-shrink: 0;
+      /* 将目录滚动条移到最右侧 */
+      padding-right: 0;
+      margin-right: calc(-1 * var(--scrollbar-width));
+    }
+
+    .outline-marker {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 20px;
+      background-color: var(--link);
+      transition: top 0.25s cubic-bezier(0, 1, 0.5, 1);
+      z-index: 0;
+      opacity: 0;
+    }
+
+    .outline-title {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-light);
+      padding: 0 24px 8px;
+      margin: 0 0 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .outline-nav {
+      position: relative;
+      padding-left: 12px;
+    }
+
+    .outline-link {
+      display: block;
+      padding: 4px 12px 4px 24px;
+      margin: 0;
+      line-height: 1.4;
+      color: var(--text-lighter);
+      transition: color 0.2s;
+      text-decoration: none;
+      position: relative;
+      border-left: 1px solid transparent;
+    }
+
+    .outline-link:hover {
+      color: var(--link);
+    }
+
+    .outline-link.active {
+      color: var(--link);
+      font-weight: 500;
+      font-weight: bolder;
+    }
+
+    .outline-link.level-2 { padding-left: 24px; }
+    .outline-link.level-3 { padding-left: 36px; }
+    .outline-link.level-4 { padding-left: 48px; }
+    .outline-link.level-5 { padding-left: 60px; }
+    .outline-link.level-6 { padding-left: 72px; }
+
+    p a {
+        text-decoration: none;
+        color: rgba(217, 115, 13, 1);
+        font-weight: bolder;
+    }    
+
+    /* 响应式设计 */
+    @media (max-width: 1280px) {
+      .main-container {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      #outline {
+        display: none;
+      }
+    }
+
+    @media (max-width: 900px) {
+      #sidebar {
+        display: none;
+      }
+      #content {
+        padding: 20px 16px;
+        min-width: 0;
+      }
+    }
