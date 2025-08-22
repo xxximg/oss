@@ -15,16 +15,16 @@ define(["Construct/DublinCore"], function( DublinCore ) {
             $.ajax({async:false, type:"get", dataType : "text" ,url:"./epub/META-INF/container.xml", "success":function(data) {
                 _this.container = data;
             }});
-            $.ajax({async:false, type:"get", dataType : "text" ,url:"./epub/OPS/toc.ncx", "success":function(data) {
+            $.ajax({async:false, type:"get", dataType : "text" ,url:"./epub/OEBPS/toc.ncx", "success":function(data) {
                 _this.toc = data;
             }});
-            $.ajax({async:false, type:"get", dataType : "text" ,url:"./epub/OPS/content.opf", "success":function(data) {
+            $.ajax({async:false, type:"get", dataType : "text" ,url:"./epub/OEBPS/content.opf", "success":function(data) {
                 _this.contentOpt = data;
             }});
-            $.ajax({async:false, type:"get", dataType : "text" ,url:"./epub/OPS/coverpage.html", "success":function(data) {
+            $.ajax({async:false, type:"get", dataType : "text" ,url:"./epub/OEBPS/coverpage.html", "success":function(data) {
                 _this.coverpage = data;
             }});
-            $.ajax({async:false, type:"get", dataType : "text" ,url:"./epub/OPS/page.html", "success":function(data) {
+            $.ajax({async:false, type:"get", dataType : "text" ,url:"./epub/OEBPS/page.html", "success":function(data) {
                 _this.page = data;
             }});
         },
@@ -284,7 +284,7 @@ define(["Construct/DublinCore"], function( DublinCore ) {
             }, options);
 
             var zip = new JSZip();
-            var OPSFolder = zip.folder("OPS");
+            var OPSFolder = zip.folder("OEBPS");
             var imagesFolder = OPSFolder.folder("images");
             var textFolder = OPSFolder.folder("Text");
 
