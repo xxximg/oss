@@ -1,0 +1,439 @@
+@font-face {
+font-family: "pingyuan";
+src: url("../Fonts/苹圆.ttf");
+}
+
+/*制作说明*/
+
+body.zzsm-bg {
+  background-image: url("zzsm.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: auto 100%;
+  padding: 48% 12% 0;
+  overflow-y: hidden;
+}
+
+div.zzw {
+  width: 85%;
+  margin: 10em auto;
+  padding: 8px 8px;
+  border-radius: 15px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(236, 236, 236, 0.85);
+  border: 1px solid #ececec;
+  box-shadow: 0 0 3px #888888;
+}
+
+div.zzn {
+  margin: 0;
+  padding: 0.5em 0.5em;
+  border-radius: 10px;
+  border: 1.5px solid #474747;
+}
+
+h2.zzsm-title {
+  margin: 0 0 10px 0;
+  font-family: "z1", "楷体", "微软雅黑", "黑体", "DK-HEITI", sans-serif;
+  font-size: 1em;
+  color: #000;
+  text-align: center;
+}
+
+p.zzsm-txt {
+  color: #413245;
+  margin: 0;
+  font-family: "z2", "楷体", "xihei", sans-serif;
+  font-size: 0.75em;
+  text-indent: 0em;
+  duokan-text-indent: 0em;
+}
+
+p.zzsm-note {
+  color: #006a88;
+  margin: 0;
+  font-family: "z2", "楷体", "xihei", sans-serif;
+  font-size: 0.6em;
+  text-indent: 0em;
+  duokan-text-indent: 0em;
+}
+
+hr.zzsm-line {
+  border: dashed #144a74;
+  border-width: 1px 0 0 0;
+  margin: 15px 0;
+}
+
+strong {
+  font-family: "z2", "楷体", "楷体_gb2312", "zw", serif;
+  color: #ab372f;
+}
+
+@page { 
+margin-top: 0px;
+margin-bottom: 0px;
+}
+
+body { 
+font-family: "pingyuan";
+padding: 0;
+margin-left: 0px;
+margin-right: 0px;
+orphans: 0;
+widows: 0;
+}
+
+p { 
+font-family: "pingyuan";
+font-size: 100%;
+line-height: 150%;
+margin: 15px,0,0,0;
+orphans: 0;
+widows: 0;
+}
+
+.a { 
+text-indent: 0em;
+}
+
+div.centeredimage {
+text-align:center;
+display:block;
+margin-top: 0.5em;
+margin-bottom: 0.5em;
+}
+
+img.attpic {
+border: 1px solid #000000;
+max-width: 100%;
+margin: 0;
+}
+
+.booktitle {
+margin-top: 30%;
+margin-bottom: 0;
+border-style: none solid none none;
+border-width: 50px;
+border-color: #4E594D;
+font-size: 3em;
+line-height: 120%;
+text-align: right;
+}
+
+.bookauthor {
+margin-top: 0;
+border-style: none solid none none;
+border-width: 50px;
+border-color: #4E594D;
+page-break-after: always;
+font-size: large;
+line-height: 120%;
+text-align: right;
+}
+
+.titletoc, .titlel1top, .titlel1std,.titlel2top, .titlel2std,.titlel3top, .titlel3std,.titlel4std {
+color: #b50a02;
+margin: 10% 0% 10% 0%;
+text-align: center;
+font-size: 110%;
+line-height: 150%;
+}
+
+.titlel1single,.titlel2single,.titlel3single {
+color: #b50a02;
+margin: 10% 0% 10% 0%;
+text-align: center;
+font-size: 110%;
+line-height: 150%;
+}
+
+span.biaoti {
+font-size: 80%;
+text-align: center;
+color: #b50a02;
+}
+
+span.num {
+font-size: 100%;
+text-align: center;
+color: white;
+background-color: rgba(181, 10, 2, 0.7);
+border-radius: 5px;
+padding:2px;
+background-opacity: 0.3;
+}
+
+/*分卷*/
+
+body.fenjuan {
+  background-image: url(beijing.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: auto 100%;
+  background-color: #464646;
+  overflow-y: hidden;
+}
+
+h2.head {
+	background-image: url(jsk.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	width: 1em;
+	color: #fff;
+	margin: 17.5em auto 0 auto;
+	padding: 1em 0.8em;
+	text-align: center;
+	font-size: 1.1em;
+	line-height:160%;
+}
+
+/*题头*/
+
+div.titou {
+	font-size: 1em;
+	padding: 0.5em;
+	margin: 2em 0.5em 1em 0.5em;
+	border-style: solid solid solid solid;
+	border-radius: 13px 13px 13px 13px;
+    background-color: #fffef8;
+	border-width:1px;
+	box-shadow: 4px 4px 5px #a49d9d;                           /*x偏移量 y偏移量 阴影模糊半径 阴影扩散半径 阴影颜色*/
+    border: 1.2px solid #207f4c;
+}
+
+p.titou {
+  font-size: 1.0em;                             
+  color: #DC143C;                                 
+  text-indent: 0;                                    
+  margin: -1.6em 0em 1.3em -1em;                
+  font-weight: normal;                           /*normal默认值 bold粗体 bolder加粗 lighter细 数字数值*/
+}
+
+p.titou b {
+  font-family: "新愚公迷茫体","黑体", sans-serif;
+  font-size: 0.9em;                                 
+  color: #fff;                                      
+  background-color: #1a3b32;                       
+  padding: 5px 18px 5px 18px;
+  border-radius: 7px 7px 7px 7px;  
+  border: 1.4px solid #D1B48C;
+}
+
+p.titou1 {
+  font-family: "汉仪全唐诗","黑体", sans-serif;
+  font-weight: 300;                           /*normal默认值 bold粗体 bolder加粗 lighter细 数字数值*/
+  color: #248067;
+  line-height: 170%;
+  text-indent: 0;
+  text-align: left;
+  margin: 1em 0.5em 1em 0.5em;
+  font-size: 0.8em;
+}
+
+p.titou2 {
+  font-family: "寒蝉正楷","黑体", sans-serif;
+  color: #248067;                           /*常用#或颜色英文或rgba*/ 
+  margin: 1.5em 0em 1em 0em;
+  font-size: 0.7em;
+  font-weight: 900;
+  text-indent: 0em;
+  text-align: right;                           /*left左对齐、center居中、right右对齐、justify两端对齐*/
+}
+
+/*图像类*/
+
+div.logo {
+margin: 0;
+text-align: center;
+text-indent: 0em;
+duokan-text-indent: 0em;
+duokan-bleed: lefttopright;
+}
+
+.image {
+width: 100%;
+}
+
+.fenge {
+display: block;    
+width: 50%;
+margin: 0 auto;
+}
+
+body.fullimage {
+background-image: url("fullimage.jpg");
+background-size: cover;
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-position: center;
+}
+
+/*插图盒子*/
+div.duokan-image-single {
+	margin: 0.5em auto; /*插图盒子上下外边距为0.5em，左右设置auto是为了水平居中这个盒子*/
+}
+
+/*图片宽度80%*/
+img.picture-80 {
+	margin: 0; /*清除img元素的外边距*/
+	width:80%; /*预览窗口的宽度*/
+	box-shadow: 3px 3px 10px #bfbfbf; /*给图片添加阴影效果*/
+}
+
+/*图片说明*/
+p.duokan-image-maintitle {
+	margin: 1em 0 0; /*图片说明的段间距*/
+	font-family: "楷体"; /*图片说明使用的字体*/
+	font-size: 0.9em; /*字体大小*/
+	text-indent: 0; /*首行缩进为零，当你使用单标签p来指定首行缩进为2em时，记得在需要居中的文本中清除缩进，因为样式是叠加的*/
+	duokan-text-indent: 0em;
+	text-align: center; /*图片说明水平居中*/
+	color: #a52a2a; /*字体颜色*/
+	line-height: 1.25em; /*行高，防止有很长的图片说明*/
+}
+
+/* 图片居中排50%宽度 */
+div.ctcenter {
+    width: 100%;                                       /*图片宽度*/
+    float: center;                                     /*图片中间*/  
+    margin-left: 0em;                                /*图片左边距离*/
+    margin-bottom: 1em;                              /*图片底部距离*/
+    margin-top: 1em;                                   /*图片顶部距离*/
+    margin-right: 0em;                                 /*图片右边距离*/
+    text-align: center;                                /*对齐位置*/
+}
+
+/*多看视频*/
+
+div.videoplay {
+  text-align: center;
+}
+
+video.content-matrix {
+    width:100%;
+}
+
+/*多看弹注*/
+
+a.duokan-footnote img {
+    width: .85em; /*<a>标签内的注释图片宽度为正文字大小的0.85倍*/
+}
+
+/*背景填充*/
+
+.oval {
+padding:5px;
+margin:0 1.5em 0 1.5em;
+background-color: rgba(181, 10, 2, 0.5);
+border-radius:15px;
+box-shadow: #333 0px 5px 10px;
+}
+
+div.liaotian {
+  width: 85%;
+  margin: 1em auto;
+  padding: 8px 8px;
+  border-radius: 15px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(236, 236, 236, 0.85);
+  border: 1px solid #ececec;
+  box-shadow: 0 0 3px #888888;
+}
+
+.toc {
+margin-left:16%;
+padding:0px;
+line-height:130%;
+text-align:justify;
+}
+
+.toc a { text-decoration: none; color: #000000; }
+
+.tocl1 {
+margin-top:0.5em;
+margin-left:-30px;
+border-style: none double double solid;
+border-width: 0px 5px 2px 20px;
+border-color: #6B766A;
+ line-height: 135%;
+font-size: 132%;
+}
+
+.tocl2 {
+margin-top: 0.5em;
+margin-left:-20px;
+border-style: none double none solid;
+border-width: 0px 2px 0px 10px;
+border-color: #939E92;
+line-height: 123%;
+font-size: 120%;
+}
+
+.tocl3 {
+margin-top: 0.5em;
+margin-left:-20px;
+border-style: none double none solid;
+ border-width: 0px 2px 0px 8px;
+border-color: #939E92;
+line-height: 112%;
+font-size: 109%;
+}
+
+.tocl4 {
+margin-top: 0.5em;
+margin-left:-20px;
+border-style: none double none solid;
+border-width: 0px 2px 0px 6px;
+border-color: #939E92;
+line-height: 115%;
+font-size: 110%;
+}
+
+.subtoc {
+margin-left:15%;
+padding:0px;
+text-align: justify;
+}
+
+.subtoclist {
+margin-top: 0.5em;
+margin-left:-20px;
+border-style: none double none solid;
+border-width: 0px 2px 0px 10px;
+border-color: #939E92;
+line-height: 123%;
+font-size: 120%;
+}
+
+/*多看画廊专属代码*/
+
+div.duokan-image-gallery-cell img {
+margin: 0; /*清除画廊盒子中的图像外边距*/
+width: 100%; /*设置画廊盒子中的图像以预览窗口的100%宽度显示*/
+}
+p.duokan-image-subtitle {
+margin: 0 0 .5em; /*清除副标题的外边距*/
+font-family: "黑体"; /*定义副标题字体*/
+font-size: .8em; /*副标题字体大小*/
+text-indent: 0; /*清除缩进*/
+}
+p.duokan-image-maintitle {
+margin: 1em 0 0; /*图片说明的段间距*/
+font-family: "楷体"; /*图片说明使用的字体*/
+font-size: .9em; /*字体大小*/
+text-indent: 0; /*首行缩进为零，当你使用单标签p来指定首行缩进为2em时，记得在需要居中的文本中清除缩进，因为样式是叠加的*/
+text-align: center; /*图片说明水平居中*/
+color: #a52a2a; /*字体颜色*/
+line-height: 1.25em; /*行高，防止有很长的图片说明*/
+}
+div.duokan-image-gallery {
+margin: .5em auto; /*定义画廊图盒子的上下外边距*/
+width: 100%; /*定义画廊图盒子的宽度*/
+text-align: center; /*画廊图中的元素水平居中*/
+}
+
