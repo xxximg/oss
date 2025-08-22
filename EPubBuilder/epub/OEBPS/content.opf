@@ -17,7 +17,7 @@
 
   <manifest>
     <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml" />
-    <item id="css" href="css/main.css" media-type="text/css" />
+    <item id="css" href="css/style.css" media-type="text/css" />
     {{#if options.coverImage}}
       <item id="cover" href="{{options.coverImage}}" media-type="image/jpeg"/>
     {{/if}}
