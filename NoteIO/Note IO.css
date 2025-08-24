@@ -1,0 +1,414 @@
+body {
+	color: #444;
+	font: 80% / 1.65 Verdana, "Geneva CE", lucida, 'Microsoft YaHei', sans-serif;
+	padding: 20px;
+	background: #f5f5f5;
+	display: flex;
+	margin: 0;
+}
+
+        /* 左侧页签栏 */
+.sidebar {
+	background: #fff;
+	border-right: 1px solid #ddd;
+	padding: 10px;
+	max-height: 500px;
+	overflow-y: auto;
+	right: 20px;
+	top: 20px;
+	width: 250px;
+	max-height: 500px;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	box-shadow: 0 0.5em 1em -0.125em #090a0c1a, 0 0px 0 1px #090a0c05;
+	border-radius: 9px;
+	transition: all 0.3s ease;
+}
+
+.sidebar.hidden {
+	transform: translateX(-100%);
+	opacity: 0;
+	width: 0;
+	padding: 0;
+	border: none;
+}
+
+.page-tab {
+	padding: 8px 12px;
+	margin-bottom: 5px;
+	cursor: pointer;
+	border-radius: 4px;
+	background: #f0f0f0;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.page-tab.active {
+	background: #e0e0e0;
+	font-weight: bold;
+}
+
+.page-tab-name {
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.page-tab-input {
+	flex: 1;
+	padding: 5px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	font-family: inherit;
+	font-size: inherit;
+	width: 100%;
+}
+
+.page-tab-delete {
+	margin-left: 8px;
+	color: #999;
+	font-size: 12px;
+	padding: 2px 5px;
+	border-radius: 3px;
+}
+
+.page-tab-delete:hover {
+	background: #ffcccc;
+	color: #ff0000;
+}
+
+.add-page {
+	padding: 8px 12px;
+	margin-top: 10px;
+	cursor: pointer;
+	color: #666;
+	text-align: center;
+	border: 1px dashed #ccc;
+	border-radius: 4px;
+}
+
+.add-page:hover {
+	background: #f0f0f0;
+}
+
+        /* 右侧内容区 */
+.wrapper {
+	flex: 1;
+	padding: 0 20px;
+	height: calc(100vh - 40px);
+	overflow-y: auto;
+	transition: margin-left 0.3s ease;
+}
+        
+        /* 瀑布流布局 */
+.aside {
+	min-height: 100px;
+	column-width: 278px;
+	column-gap: 15px;
+}
+
+.note {
+	padding-top: 38px;
+	position: relative;
+	background: url(https://pic2.ziyuan.wang/user/miss/2025/08/bg-note-top_54947c344dee8.png) top center no-repeat;
+	transition: all 0.3s ease;
+	width: 278px;
+	break-inside: avoid;
+	margin-bottom: 15px;
+}
+
+.note-container {
+	padding: 1px 20px 0;
+	background: url(https://pic2.ziyuan.wang/user/miss/2025/08/bg-note-middle_799e50947b15a.png) top center repeat-y;
+	overflow: hidden;
+	word-break: break-word;
+	white-space: pre-wrap;
+	box-sizing: border-box;
+	min-height: 50px;
+	outline: none;
+	width: 100%;
+}
+
+.note-container::selection {
+	background: rgba(0, 120, 215, 0.3);
+	color: inherit;
+}
+
+.note-bottom {
+	height: 34px;
+	background: url(https://pic2.ziyuan.wang/user/miss/2025/08/bg-note-bottom_a39b5ac307f3a.png) bottom center no-repeat;
+	width: 100%;
+	position: relative;
+}
+
+.note-date {
+	position: absolute;
+	right: 20px;
+	bottom: 15px;
+	font-size: 12px;
+	color: #999;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+.context-menu {
+	position: fixed;
+	z-index: 1000;
+	background: white;
+	border: 1px solid #ddd;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+	display: none;
+	width: 120px;
+}
+
+.context-menu-item {
+	padding: 8px 15px;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.context-menu-item:hover {
+	background: #f0f0f0;
+}
+
+.empty-message {
+	text-align: center;
+	color: #999;
+	padding: 20px;
+	font-style: italic;
+	column-span: all;
+}
+
+        /* 侧边栏切换按钮 */
+.toggle-sidebar {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	z-index: 100;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	padding: 5px 13px;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.tool-buttons {
+	position: fixed;
+	left: 10px;
+	bottom: 10px;
+	z-index: 100;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.tool-button {
+	padding: 5px 10px;
+	cursor: pointer;
+	font-size: 14px;
+	border-radius: 3px;
+	border: none;
+	background: #f5f5f5;
+}
+
+.tool-button:hover {
+	background: #e0e0e0;
+}
+
+.file-input {
+	display: none;
+}
+
+/* Dropbox 按钮样式 */
+.tool-button.dropbox {
+	background: #0061ff;
+	color: white;
+}
+
+.tool-button.dropbox:hover {
+	background: #004ac7;
+}
+
+/* 状态提示 */
+.status-toast {
+	position: fixed;
+	bottom: 60px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(0, 0, 0, 0.7);
+	color: white;
+	padding: 10px 20px;
+	border-radius: 4px;
+	z-index: 1000;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.status-toast.show {
+	opacity: 1;
+}
+
+/* 认证模态框 */
+.auth-modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1001; /* 高于其他元素 */
+	justify-content: center;
+	align-items: center;
+}
+
+.auth-modal-content {
+	background: white;
+	padding: 20px;
+	border-radius: 8px;
+	width: 400px;
+	max-width: 90%;
+}
+
+.auth-modal h3 {
+	margin-top: 0;
+}
+
+.auth-form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin: 15px 0;
+}
+
+.auth-form input {
+	padding: 8px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+
+.auth-form button {
+	padding: 10px;
+	background: #0061ff;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.auth-form button:hover {
+	background: #004ac7;
+}
+
+.auth-modal-close {
+	background: #f0f0f0;
+	color: #333;
+	padding: 8px 15px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.auth-modal-close:hover {
+	background: #e0e0e0;
+}
+
+/* 授权码输入区域 */
+.code-input-section {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.code-input-section h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #0061ff;
+}
+
+.code-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.submit-code {
+    padding: 8px 15px;
+    background: #0061ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-code:hover {
+    background: #004ac7;
+}
+
+/* Dropbox 状态指示 */
+.dropbox-status {
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: none;
+}
+
+.dropbox-status.connected {
+    display: block;
+    background: #e6f7ee;
+    color: #0a7b4c;
+    border: 1px solid #0a7b4c;
+}
+
+.dropbox-status.disconnected {
+    display: block;
+    background: #fef5f5;
+    color: #cf2222;
+    border: 1px solid #cf2222;
+}
+
+@media (max-width: 800px) {
+	body {
+		flex-direction: column;
+	}
+
+	.sidebar {
+		width: 100%;
+		height: auto;
+		border-right: none;
+		border-bottom: 1px solid #ddd;
+	}
+
+	.wrapper {
+		height: auto;
+	}
+
+	.aside {
+		column-width: 100%;
+	}
+
+	.sidebar.hidden {
+		transform: translateY(-100%);
+		height: 0;
+	}
+}
